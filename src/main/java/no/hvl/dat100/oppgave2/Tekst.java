@@ -31,7 +31,7 @@ public class Tekst extends Innlegg {
 
 	@Override
 	public String toString() {
-		return ("TEKST"+super.getId()+"\n"+super.getBruker()+"\n"+super.getDato()+"\n"+super.getLikes()+"\n"+this.tekst+"\n");
+		return ("TEKST\n"+super.getId()+"\n"+super.getBruker()+"\n"+super.getDato()+"\n"+super.getLikes()+"\n"+this.tekst+"\n");
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6

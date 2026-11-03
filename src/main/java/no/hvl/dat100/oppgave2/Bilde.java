@@ -26,7 +26,7 @@ public class Bilde extends Tekst {
 
 	@Override
 	public String toString() {
-		return ("BILDE"+super.getId()+"\n"+super.getBruker()+"\n"+super.getDato()+"\n"+super.getLikes()+"\n"+super.getTekst()+"\n"+this.url+"\n");
+		return ("BILDE\n"+super.getId()+"\n"+super.getBruker()+"\n"+super.getDato()+"\n"+super.getLikes()+"\n"+super.getTekst()+"\n"+this.url+"\n");
 	}
 
 	// Metoden nedenfor er kun for valgfri oppgave 6
