@@ -5,46 +5,84 @@ import no.hvl.dat100.oppgave1.*;
 
 public class Blogg {
 
-	// TODO: objektvariable 
+	private Innlegg[] innleggstabell;
+	private int nesteledig;
 
 	public Blogg() {
-		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
+		this.innleggstabell = new Innlegg[20];
+		this.nesteledig = 0;
 	}
 
 	public Blogg(int lengde) {
-		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
+		this.innleggstabell = new Innlegg[lengde];
+		this.nesteledig = 0;
 	}
 
 	public int getAntall() {
-		throw new UnsupportedOperationException(TODO.method());
+		return this.nesteledig;
 	}
 	
 	public Innlegg[] getSamling() {
-		throw new UnsupportedOperationException(TODO.method());
-
+		return this.innleggstabell;
 	}
 	
 	public int finnInnlegg(Innlegg innlegg) {
-
-		throw new UnsupportedOperationException(TODO.method());
+		if (this.nesteledig == 0){
+			return -1;
+		}
+		else{
+			for (int i = 0; i < nesteledig;i++){
+				if (innlegg.erLik(this.innleggstabell[i])){
+					return i;
+				}
+			}
+			return -1;
+		}
 	}
 
 	public boolean finnes(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+		if (this.nesteledig == 0){
+			return false;
+		}
+		else{
+			for (int i = 0; i < nesteledig;i++){
+				if (innlegg.erLik(this.innleggstabell[i])){
+					return true;
+				}
+			}
+			return false;
+		}
 	}
 
 	public boolean ledigPlass() {
-		throw new UnsupportedOperationException(TODO.method());
+		if (this.nesteledig == this.innleggstabell.length){
+			return false;
+		}
+		else{
+			return true;
+		}
+		
 
 	}
 	
 	public boolean leggTil(Innlegg innlegg) {
-
-		throw new UnsupportedOperationException(TODO.method());
+		if (!finnes(innlegg)){
+			this.innleggstabell[this.nesteledig] = innlegg;
+			nesteledig++;
+			return true;
+		}
+		else{
+			System.out.println("Det finnes et innlegg med samme id");
+			return false;
+		}
 	}
 	
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method());
+		String fullString = (nesteledig + "\n");
+		for (int i = 0; i < nesteledig;i++){
+			fullString += innleggstabell[i].toString();
+		}
+		return fullString;
 	}
 
 	// valgfrie oppgaver nedenfor
